@@ -5,7 +5,7 @@ import "../css/font-awesome.css"
 import "bootstrap/dist/css/bootstrap.css"
 import "../css/style.css"
 import SEO from "../components/seo"
-import logo from "../images/oneshopper-logo.png"
+import logo from "../images/citylove-logo.png"
 
 
 
@@ -25,16 +25,13 @@ const Header = ({ siteTitle }) => (
                 <Link className="nav-link" to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/blogs">Blogs</Link>
+                <Link className="nav-link" to="/shop">Shop</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/store">Store</Link>
+                <Link className="nav-link" to="/our-story">Our Story</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/about">About</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/contact-us">Contact</Link>
+                <Link className="nav-link" to="/blog">Blog</Link>
               </li>
             </ul>
             <div className="header-cart">

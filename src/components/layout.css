@@ -199,9 +199,9 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
-  font-weight: normal;
+  color: #222323;
+  font-family: 'Old Standard TT', serif;
+  font-weight: 400;
   word-wrap: break-word;
   font-kerning: normal;
   -moz-font-feature-settings: "kern", "liga", "clig", "calt";
@@ -243,7 +243,7 @@ h2 {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 1.875rem;
   color: inherit;
   font-weight: bold;
   text-rendering: optimizeLegibility;

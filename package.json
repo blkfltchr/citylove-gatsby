@@ -1,9 +1,9 @@
 {
-  "name": "OneShopper",
+  "name": "gatsby-citylove",
   "private": true,
-  "description": "E-Commerce site with Gatsby and React",
+  "description": "Gatsby site for City Love Supply Co.",
   "version": "0.1.0",
-  "author": "Rohit Gupta <rohitguptab33@gmail.com>",
+  "author": "Blake Fletcher <blkfltchr@gmail.com>",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "disqus-react": "^1.0.5",
@@ -20,12 +20,12 @@
     "gatsby-transformer-remark": "^2.6.50",
     "gatsby-transformer-sharp": "^2.4.2",
     "graphql": "^14.3.0",
+    "nuka-carousel": "^4.6.6",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-awesome-modal": "^2.0.5",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
-    "react-slick": "^0.24.0",
     "react-star-rating-component": "^1.4.1",
     "react-tabs": "^3.0.0"
   },
@@ -46,9 +46,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Rohitguptab/OneShopper"
+    "url": "https://github.com/blkfltchr/gatsby-citylove"
   },
   "bugs": {
-    "url": "https://github.com/Rohitguptab/OneShopper/issues"
+    "url": "https://github.com/blkfltchr/gatsby-citylove/issues"
   }
 }

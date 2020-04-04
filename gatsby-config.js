@@ -5,7 +5,7 @@ const { spaceId, accessToken, snipcart } = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: `OneShopper`,
+    title: `City Love Supply Co.`,
     description: `E-Commerce site with Gatsby and React`,
     author: `@rohitguptab`,
   },
@@ -24,13 +24,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `OneShopper`,
+        name: `We're a Toronto based apparel company, celebrating and elevating the work of the creative class. Our mission is to support the energy of creativity in Toronto, by highlighting and championing artists and craftspeople of all kinds.`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/oneshopper-logo.png`,
+        icon: `src/images/citylove-logo.png`,
       },
     },
     {
