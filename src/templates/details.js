@@ -42,6 +42,10 @@ const ProductDetails = data => (
               data-item-image={data.data.contentfulProduct.image === null ? "" : data.data.contentfulProduct.image.fixed.src}
               data-item-name={data.data.contentfulProduct.name}
               data-item-url={`/`}
+              data-item-custom1-name="Color"
+              data-item-custom1-options="Black|White"
+              data-item-custom2-name="Size"
+              data-item-custom2-options="Small|Medium|Large|Extra Large"
             >
               Buy Now
             </a>

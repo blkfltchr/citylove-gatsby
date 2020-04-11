@@ -39,7 +39,11 @@ class IndexPost extends React.Component {
                         data-item-image={items.node.image === null ? "" : items.node.image.fluid.src}
                         data-item-name={items.node.name}
                         data-item-url={`/`}
-                      >
+                        data-item-custom1-name="Color"
+                        data-item-custom1-options="Black|White"
+                        data-item-custom2-name="Size"
+                        data-item-custom2-options="Small|Medium|Large|Extra Large"
+                        >
                         Add to Cart
                     </a>
                     </div>
@@ -48,6 +52,9 @@ class IndexPost extends React.Component {
               </div>
             </div>
           ))}
+          <div className="center">
+              <Link to="/shop">Shop The Collection</Link>
+          </div>
         </div>
       </React.Fragment>
     );
@@ -71,7 +78,7 @@ export default IndexPage
 
 export const query = graphql`
   query AboutQuery {
-    allContentfulProduct(limit: 6,sort:{fields:createdAt,order: DESC}){
+    allContentfulProduct(limit: 3,sort:{fields:createdAt,order: ASC}){
       edges{
         node{
           id

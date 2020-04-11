@@ -49,7 +49,9 @@ class BlogsPost extends React.Component {
             <li>
               <div className="post-item template-square columned">
                 <div className="post-thumbnail">
-                  <Img sizes={items.node.featureImage.fluid} />
+                  <Link to={`/${items.node.slug}`}>
+                    <Img sizes={items.node.featureImage.fluid} />
+                  </Link>
                 </div>
                 <div className="post-details">
                   <h2 className="post-title"><Link to={`/${items.node.slug}`}>{items.node.title}</Link></h2>
