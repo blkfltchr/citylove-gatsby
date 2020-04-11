@@ -31,6 +31,9 @@ export default class LatestBlogs extends React.Component {
                     <img src="https://cdn.shopify.com/s/files/1/0252/0435/9253/files/A1_HDBXM-min.jpeg?397" alt="City Love Supply story" />
                     <img src="https://cdn.shopify.com/s/files/1/0252/0435/9253/files/A1_DSC5027-min.jpg?397" alt="City Love Supply story" />
                 </Carousel>
+                <div className="text-center">
+                    <h2>Premium goods inspired by the energy and experience of life in the city.</h2>
+                </div>
             </div>
         );
     }

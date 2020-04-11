@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import { DiscussionEmbed } from "disqus-react";
 
@@ -23,15 +24,15 @@ const BlogDetails = data => (
                         <i className="fas fa-calendar-alt"></i>
                         {data.data.contentfulBlogs.publicData}
                     </div>
-                    <div className="author">
-                        <Img sizes={data.data.contentfulBlogs.author.photo.fixed} />
-                        <strong className="name">{data.data.contentfulBlogs.author.name}</strong>
-                    </div>
                     <div
                         dangerouslySetInnerHTML={{
                             __html: data.data.contentfulBlogs.description.childMarkdownRemark.html
                         }}
                     />
+                    <div className="author">
+                        <Img sizes={data.data.contentfulBlogs.author.photo.fixed} />
+                        <strong className="name">{data.data.contentfulBlogs.author.name}</strong>
+                    </div>
 
                 </div>
                 <DiscussionEmbed

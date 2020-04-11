@@ -1,18 +1,14 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import "../css/font-awesome.css"
 import "bootstrap/dist/css/bootstrap.css"
 import "../css/style.css"
-import SEO from "../components/seo"
 import logo from "../images/citylove-logo.png"
 
 
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <header className="site-header">
-    <SEO>
-    </SEO>
     <div className="container">
       <div className="row">
         <div className="col-sm-12 col-md-4 align-self-center">
@@ -36,7 +32,7 @@ const Header = ({ siteTitle }) => (
             </ul>
             <div className="header-cart">
               <Link className="Header__summary snipcart-summary snipcart-checkout" to="#">
-                <i className="fas fa-cart-plus"></i>
+                <i className="fas fa-shopping-bag"></i>
               </Link>
             </div>
           </nav>
@@ -46,13 +42,5 @@ const Header = ({ siteTitle }) => (
 
   </header >
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header
