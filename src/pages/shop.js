@@ -49,23 +49,23 @@ class IndexPost extends React.Component {
             {data.data.allContentfulProduct.edges.slice(0, NoOfPost).map(items => (
               <div className="Catalogue__item col-sm-12 col-md-6 col-lg-4" key={items.node.id}>
                 <div className="details_List">
-                  {items.node.image === null ? <div className="no-image">No Image</div> : <Link to={`/${items.node.slug}`}><Img sizes={items.node.image.fixed} /></Link>}
+                  {items.node.image === null ? <div className="no-image">No Image</div> : <Link to={`/${items.node.slug}`}><Img sizes={items.node.image.fluid} /></Link>}
 
                   <div className="details_inner">
                     <h2>
                       <Link to={`/${items.node.slug}`}>{items.node.name}</Link>
                     </h2>
-                    <div className="row">
-                      <div className="col-sm-4 align-self-center">
+                    <div className="row price-buy">
+                      <div className="align-self-center">
                         <span className="price">${items.node.price}</span>
                       </div>
-                      <div className="col-sm-8 text-right align-self-center">
+                      <div className="align-self-center">
                         <a
                           href="#"
                           className="Product snipcart-add-item"
                           data-item-id={items.node.slug}
                           data-item-price={items.node.price}
-                          data-item-image={items.node.image === null ? "" : items.node.image.fixed.src}
+                          data-item-image={items.node.image === null ? "" : items.node.image.fluid.src}
                           data-item-name={items.node.name}
                           data-item-url={`/`}
                           data-item-custom1-name="Color"
@@ -109,11 +109,14 @@ export const query = graphql`
           name
           slug
           image {
-            fixed(width: 1000, height: 500) {
-              width
-              height
+            fluid(maxWidth: 1000) {
+              base64
+              aspectRatio
               src
               srcSet
+              srcWebp
+              srcSetWebp
+              sizes
             }
           }
           price

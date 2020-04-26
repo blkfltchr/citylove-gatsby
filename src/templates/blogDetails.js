@@ -50,22 +50,22 @@ const BlogDetails = data => (
 export default BlogDetails
 
 export const query = graphql`
-  query BlogDetailsQuery($slug: String!) {
+    query BlogDetailsQuery($slug: String!) {
         contentfulBlogs(slug: {eq: $slug }) {
             id
             title
             slug
             publicData(formatString: "MMMM D, YYYY")
             author {
-            name
-            photo {
-                fixed(width: 50, height: 50) {
-                width
-                height
-                src
-                srcSet
+                name
+                photo {
+                    fixed(width: 50, height: 50) {
+                    width
+                    height
+                    src
+                    srcSet
+                    }
                 }
-            }
             }
             description {
                 childMarkdownRemark {
@@ -83,7 +83,7 @@ export const query = graphql`
                     srcSetWebp
                     sizes
                   }
+            }
         }
     }
-}
 `

@@ -15,47 +15,49 @@ const ProductDetails = data => (
             <Tabs>
               {data.data.contentfulProduct.productMorePhotos.map(items => (
                 <TabPanel key={items.id}>
-                  <Tab><img src={items.fixed.src} alt={items.title} /></Tab>
+                  <Tab><img src={items.fluid.src} alt={items.title} /></Tab>
                 </TabPanel>
               ))}
               <TabList>
                 {data.data.contentfulProduct.productMorePhotos.map(items => (
-                  <Tab key={items.id}><img src={items.fixed.src} alt={items.title} /></Tab>
+                  <Tab key={items.id}><img src={items.fluid.src} alt={items.title} /></Tab>
                 ))}
               </TabList>
-            </Tabs>}
-
+            </Tabs>
+          }
         </div>
-        <div>
-          <h2>{data.data.contentfulProduct.name}</h2>
-        </div>
-        <div className="row buynowinner">
-          <div className="col-sm-2">
-            <span className="price">Price: ${data.data.contentfulProduct.price}</span>
+        <div className="product-text">
+          <div>
+            <h2>{data.data.contentfulProduct.name}</h2>
           </div>
-          <div className="col-sm-10 text-left">
-            <a
-              href="#"
-              className="Product snipcart-add-item"
-              data-item-id={data.data.contentfulProduct.slug}
-              data-item-price={data.data.contentfulProduct.price}
-              data-item-image={data.data.contentfulProduct.image === null ? "" : data.data.contentfulProduct.image.fixed.src}
-              data-item-name={data.data.contentfulProduct.name}
-              data-item-url={`/`}
-              data-item-custom1-name="Color"
-              data-item-custom1-options="Black|White"
-              data-item-custom2-name="Size"
-              data-item-custom2-options="Small|Medium|Large|Extra Large"
-            >
-              Buy Now
-            </a>
+          <div className="row buynowinner">
+            <div>
+              <span className="price">Price: ${data.data.contentfulProduct.price}</span>
+            </div>
+            <div className="text-left">
+              <a
+                href="#"
+                className="Product snipcart-add-item"
+                data-item-id={data.data.contentfulProduct.slug}
+                data-item-price={data.data.contentfulProduct.price}
+                data-item-image={data.data.contentfulProduct.image === null ? "" : data.data.contentfulProduct.image.fluid.src}
+                data-item-name={data.data.contentfulProduct.name}
+                data-item-url={`/`}
+                data-item-custom1-name="Color"
+                data-item-custom1-options="Black|White"
+                data-item-custom2-name="Size"
+                data-item-custom2-options="Small|Medium|Large|Extra Large"
+              >
+                Buy Now
+              </a>
+            </div>
           </div>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.data.contentfulProduct.details.childMarkdownRemark.html
+            }}
+          />
         </div>
-        <div
-          dangerouslySetInnerHTML={{
-            __html: data.data.contentfulProduct.details.childMarkdownRemark.html
-          }}
-        />
       </div>
     </div>
   </Layout >
@@ -70,13 +72,16 @@ export const query = graphql`
             name
             slug
             image {
-                fixed(width: 1120, height: 500) {
-                    width
-                    height
-                    src
-                    srcSet
-                }
+              fluid(maxWidth: 1120) {
+                base64
+                aspectRatio
+                src
+                srcSet
+                srcWebp
+                srcSetWebp
+                sizes
               }
+            }
             price
             details {
                 childMarkdownRemark {
@@ -85,7 +90,7 @@ export const query = graphql`
             }
             productMorePhotos {
                 id
-                fixed(width: 1120, height: 600){
+                fluid(maxWidth: 1120){
                     src
                 }
             }

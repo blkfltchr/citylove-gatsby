@@ -1,13 +1,13 @@
 var dotenv = require("dotenv");
 dotenv.config();
 
-const { spaceId, accessToken, snipcart } = process.env;
+const { spaceId, accessToken, snipcart, googleAnalytics } = process.env;
 
 module.exports = {
   siteMetadata: {
     title: `City Love Supply Co.`,
     description: `E-Commerce site with Gatsby and React`,
-    author: `@rohitguptab`,
+    author: `@blkfltchr`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -45,6 +45,13 @@ module.exports = {
       options: {
         apiKey: snipcart,
         autopop: true,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: googleAnalytics,
+        head: true,
       },
     },
   ],

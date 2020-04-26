@@ -15,7 +15,7 @@ class IndexPost extends React.Component {
 
     return (
       <React.Fragment>
-        <div className="row product-main">
+        <div className="row product-main product-mainpage">
           {data.data.allContentfulProduct.edges.map(items => (
             <div className="Catalogue__item col-sm-12 col-md-6 col-lg-4" key={items.node.id}>
               <div className="details_List">
@@ -26,11 +26,11 @@ class IndexPost extends React.Component {
                   <h2>
                     <Link to={`/${items.node.slug}`}>{items.node.name}</Link>
                   </h2>
-                  <div className="row">
-                    <div className="col-sm-4 align-self-center">
+                  <div className="row price-buy">
+                    <div className="align-self-center">
                       <span className="price">${items.node.price}</span>
                     </div>
-                    <div className="col-sm-8 text-right align-self-center">
+                    <div className="align-self-center">
                       <a
                         href="#"
                         className="Product snipcart-add-item"
@@ -45,7 +45,7 @@ class IndexPost extends React.Component {
                         data-item-custom2-options="Small|Medium|Large|Extra Large"
                         >
                         Add to Cart
-                    </a>
+                      </a>
                     </div>
                   </div>
                 </div>
